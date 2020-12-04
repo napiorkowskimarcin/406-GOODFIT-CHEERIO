@@ -1,7 +1,9 @@
 //WEB SCRAPPING - FOR CRUNCHBASE
 //ALL OF THE SELECTORS FOR CHEERIO ARE STORED INSIDE ./SELECTORS/SELECTORS
 //ALL OF THE MODYFICATIONS MADE ON THE IMPORTED VALUES ARE STORED INSIDE ./OPERATIONS/OPERATIONS
-
+//LOAD MODULE WITH FILENAME
+const nameFile = require("./config/nameFile");
+//LOAD DATA
 const {
   domainText,
   nameText,
@@ -25,6 +27,7 @@ const {
 //
 //CREATE AN ARRAY OF PREPARED PROPERTIES
 let companyInfo = [];
+
 companyInfo.domain = domainText;
 companyInfo.name = nameText;
 companyInfo.country = countryText;
@@ -42,4 +45,6 @@ companyInfo.shortDescription = descriptionText;
 companyInfo.facebookUrl = facebookText;
 companyInfo.linkedinUrl = linkedInText;
 companyInfo.twitter = twitterText;
-console.log(companyInfo);
+
+//FINAL SET OF INFORMATIONS
+console.log({ companyInfo });

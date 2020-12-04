@@ -1,10 +1,11 @@
 const fs = require("fs");
 const cheerio = require("cheerio");
 const path = require("path");
+const nameFile = require("../config/nameFile");
 
 //LOAD A FILE
-const filePath = path.join(__dirname, "../airtable.html");
-const $ = cheerio.load(fs.readFileSync(filePath));
+
+const filePath = path.join(__dirname, `../${nameFile}.html`);
 
 //CREATION AND OPERATIONS ON VALUES
 const {
@@ -27,9 +28,9 @@ const {
   twitterSelector,
 } = require("../selectors/selectors");
 
-const { Module } = require("module");
-
 //1. REMOVING EXTRA WHITESPACE AND LINEBREAKS FROM DOMAIN
+
+const $ = cheerio.load(fs.readFileSync(filePath));
 let domainText = $(domainSelector).text();
 domainText = JSON.stringify(domainText).replace(/\s+|\\n/g, " ");
 domainText = JSON.parse(domainText).trim();
