@@ -31,23 +31,32 @@ const {
 //1. REMOVING EXTRA WHITESPACE AND LINEBREAKS FROM DOMAIN
 
 const $ = cheerio.load(fs.readFileSync(filePath));
-let domainText = $(domainSelector).text();
-domainText = JSON.stringify(domainText).replace(/\s+|\\n/g, " ");
-domainText = JSON.parse(domainText).trim();
+let domainText = $(domainSelector)
+  .text()
+  .replace(/\s+|\\n/g, " ")
+  .trim();
+domainText = domainText;
+
 //2. BRING THE NAME TEXT
 const nameText = $(nameSelector).text();
 //3. REMOVING EXTRA WHITESPACE AND LINEBREAKS FROM COUNTRY
-let countryText = $(countrySelector).text();
-countryText = JSON.stringify(countryText).replace(/\s+|\\n/g, " ");
-countryText = JSON.parse(countryText).trim();
+let countryText = $(countrySelector)
+  .text()
+  .replace(/\s+|\\n/g, " ")
+  .trim();
+
 //4. REMOVING EXTRA WHITESPACE AND LINEBREAKS FROM STATE
-let stateText = $(stateSelector).text();
-stateText = JSON.stringify(stateText).replace(/\s+|\\n/g, " ");
-stateText = JSON.parse(stateText).trim();
+let stateText = $(stateSelector)
+  .text()
+  .replace(/\s+|\\n/g, " ")
+  .trim();
+
 //5. REMOVING EXTRA WHITESPACE AND LINEBREAKS FROM CITY
-let cityText = $(citySelector).text();
-cityText = JSON.stringify(cityText).replace(/\s+|\\n/g, " ");
-cityText = JSON.parse(cityText).trim();
+let cityText = $(citySelector)
+  .text()
+  .replace(/\s+|\\n/g, " ")
+  .trim();
+
 //6. BRING EMPLOYEE TEXT
 const employeeText = $(employeeBracketSelector).text();
 //7. BRING FUNDING ROUND TEXT
