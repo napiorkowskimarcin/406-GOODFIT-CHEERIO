@@ -2,11 +2,9 @@
 //ALL OF THE SELECTORS FOR CHEERIO ARE STORED INSIDE ./SELECTORS/SELECTORS
 //ALL OF THE MODYFICATIONS MADE ON THE IMPORTED VALUES ARE STORED INSIDE ./OPERATIONS/OPERATIONS
 //LOAD MODULE WITH FILENAME
-let nameFile = " ";
+let nameFile = require("./config/nameFile");
 if (process.argv[2]) {
   nameFile = process.argv[2];
-} else {
-  nameFile = require("../config/nameFile");
 }
 //LOAD DATA
 const {
