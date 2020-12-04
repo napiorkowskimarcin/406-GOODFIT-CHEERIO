@@ -1,7 +1,12 @@
 const fs = require("fs");
 const cheerio = require("cheerio");
 const path = require("path");
-const nameFile = require("../config/nameFile");
+let nameFile = " ";
+if (process.argv[2]) {
+  nameFile = process.argv[2];
+} else {
+  nameFile = require("../config/nameFile");
+}
 
 //LOAD A FILE
 
