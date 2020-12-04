@@ -1,4 +1,4 @@
 let nameFile = "airtable";
-nameFile = "xiaomi";
-nameFile = "twitter";
+//nameFile = "xiaomi";
+//nameFile = "twitter";
 module.exports = nameFile;
